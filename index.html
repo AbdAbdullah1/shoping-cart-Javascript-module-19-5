@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default"><i id="minusBtn" class="fas fa-minus"></i></button>
+                           <input type="text" id="IphoneQuantity" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="plusBtn" class=" fas fa-plus"></i></button>
                         </div>
                         <h5>$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default"><i id="minusBtn2" class="fas fa-minus"></i></button>
+                           <input type="text" id="IphoneCaseAmount" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="plusBtn2" class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -77,6 +77,60 @@
          </div>
       </div>
    </section>
+
+<script>
+      //   plus Button eventhandlaer.\listener
+const plusBtn = document.getElementById("plusBtn");
+plusBtn.addEventListener("click",function(){
+  const IphoneQuantityNum = parseFloat(IphoneQuantity.value);
+   const IphoneQuantityOld =IphoneQuantityNum +1;
+   console.log(IphoneQuantityOld);
+    document.getElementById("IphoneQuantity").value = IphoneQuantityOld;
+   // const IphoneQuantity = getElementById("IpnoneQuantity");
+   // const totalQuantity = IphoneQuantity + 1;
+   // console.log(totalQuantity);
+   
+})
+
+
+
+
+
+         // minus Button eventhandlarer
+const minusBtn = document.getElementById("minusBtn");
+minusBtn.addEventListener("click",function(){
+   const IphoneQuantityNum = parseFloat(IphoneQuantity.value);
+   const IphoneQuantityOld = IphoneQuantityNum -1;
+   console.log(IphoneQuantityOld);
+   document.getElementById("IphoneQuantity").value =IphoneQuantityOld;
+})
+
+         //  minusBtn2
+const minusBtn2 = document.getElementById("minusBtn2");
+minusBtn2.addEventListener("click",function(){
+//   const IphoneCaseAmount = document.getElementById("IphoneCaseAmount");
+   const IphoneCaseAmountNum = parseFloat(IphoneCaseAmount.value);
+   const IphoneCaseAmountNumOld = IphoneCaseAmountNum -1 ;
+   console.log(IphoneCaseAmountNumOld);
+   document.getElementById("IphoneCaseAmount").value = IphoneCaseAmountNumOld;
+
+})
+
+   // plusBtn2
+   const plusBtn2 = document.getElementById("plusBtn2");
+   plusBtn2.addEventListener("click",function(){
+     const IphoneCaseAmountNum = parseFloat(IphoneCaseAmount.value);
+     const IphoneCaseAmountNumOld = IphoneCaseAmountNum +1;
+     console.log(IphoneCaseAmountNumOld);
+     document.getElementById("IphoneCaseAmount").value = IphoneCaseAmountNumOld;
+   })
+
+
+
+
+
+</script>
+
 </body>
 
 </html>
